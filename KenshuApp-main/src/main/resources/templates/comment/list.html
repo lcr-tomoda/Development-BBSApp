@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>コメント一覧</title>
+	<link href="/css/common.css" rel="stylesheet">
+	</link>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1>コメント一覧</h1>
+	<table class="osare-table col4t">
+		<thead>
+			<tr>
+				<th>投稿ID</th>
+				<th>ID</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="comment : ${commentList}" th:object="${comment}">
+				<td class="center" th:text="*{id}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="osare-table col4t">
+		<thead>
+			<tr>
+				<th>Goods1</th>
+				<th>Goods2</th>
+				<th>Goods3</th>
+				<th>Goods4</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>100</td>
+				<td>90</td>
+				<td>80</td>
+				<td>70</td>
+			</tr>
+			<tr>
+				<td>text</td>
+				<td>text</td>
+				<td>text</td>
+				<td>text</td>
+			</tr>
+			<tr>
+				<td>text</td>
+				<td>text</td>
+				<td>text</td>
+				<td>text</td>
+			</tr>
+			<tr>
+				<td>text</td>
+				<td>text</td>
+				<td>text</td>
+				<td>text</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

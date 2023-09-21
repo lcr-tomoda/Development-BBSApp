@@ -1,0 +1,15 @@
+.id {
+	width: 80px;
+	text-align: center;
+}
+
+.title {
+	width: auto;
+	text-align: left;
+}
+
+.created_at {
+	width: 200px;
+	text-align: center;
+}
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>投稿一覧</title>
+	<link href="/css/common.css" rel="stylesheet">
+	<link href="/css/post/list.css" rel="stylesheet">
+	<script type="text/javascript" src="/js/post/list.js"></script>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<div id="include" th:insert="header"></div>
+	
+	<a href="/menu">メニュー</a> > 投稿一覧</span>
+	
+	<h2>投稿一覧</h2>
+	<div class="align_r">
+		<a class="button" href="/post/input">新規投稿</a>
+	</div>
+	<table id="post_list" class="osare-table">
+		<thead>
+			<tr>
+				<th class="id">投稿ID</th>
+				<th class="title">タイトル</th>
+				<th class="created_at">投稿日時</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="post : ${postList}" th:object="${post}">
+				<td class="id" th:text="*{id}"></td>
+				<td class="title" th:text="*{title}"></td>
+				<td class="created_at" th:text="${#dates.format(post.createdAt, 'yyyy/MM/dd HH:mm:ss')}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

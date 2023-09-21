@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>ユーザー登録</title>
+	<link href="/css/common.css" rel="stylesheet">
+	<link href="/css/user/input.css" rel="stylesheet">
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<div id="include" th:insert="header"></div>
+	<h2>ユーザー登録</h2>
+	<form th:action="@{/user/confirm}" method="post" th:object="${user}">
+		<div class="input_area">
+			<label for="email">メールアドレス（ログインID）:</label>
+			<input type="text" id="email" name="email" th:field="${user.email}">
+			<ul th:each="err : ${#fields.errors('email')}" th:if="${#fields.hasErrors('email')}">
+				<li class="error" style="color:mediumvioletred;" th:text="${err}"></li>
+			</ul>
+
+			<label for="userName">ユーザー名:</label><br>
+			<input type="text" id="userName" name="userName" th:field="${user.userName}">
+			<ul th:each="err : ${#fields.errors('userName')}" th:if="${#fields.hasErrors('userName')}">
+				<li class="error" style="color:mediumvioletred;" th:text="${err}"></li>
+			</ul>
+
+			<label for="password">パスワード:</label><br>
+			<input type="password" id="password" name="password" th:field="${user.password}">
+			<ul th:each="err : ${#fields.errors('password')}" th:if="${#fields.hasErrors('password')}">
+				<li class="error" style="color:mediumvioletred;" th:text="${err}"></li>
+			</ul>
+
+
+			<label for="password">アイコン:</label><br>
+			<th:block th:each="i : ${#numbers.sequence(1,16)}">
+				<input type="radio" name="sizeSelect" th:id="'icon_' + ${i}" th:value="${i}"
+					th:field="${user.icon}"><label th:attr="for='icon_' + ${i}"></label>
+			</th:block>
+			<ul th:each="err : ${#fields.errors('icon')}" th:if="${#fields.hasErrors('icon')}">
+				<li class="error" style="color:mediumvioletred;" th:text="${err}"></li>
+			</ul>
+		</div>
+
+
+
+
+		<input type="submit" class="button" value="登録する">
+	</form>
+</body>
+
+</html>
