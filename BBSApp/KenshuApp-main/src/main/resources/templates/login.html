@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>開発演習サイト</title>
+	<link href="/css/common.css" rel="stylesheet">
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<div id="include" th:insert="header"></div>
+	<div th:if="${param.error}">
+		<p class="error" style="color:mediumvioletred;">利用できないIDまたはパスワードです。</p>
+	</div>
+	<div th:if="${param.logout}">
+		ログアウトしました。
+	</div>
+	<form th:action="@{/login}" method="post">
+		<div><label> ユーザー名: <input type="text" name="username" class="cp_iptxt"/> </label></div>
+		<div><label> パスワード: <input type="password" name="password" class="cp_iptxt" /> </label></div>
+		<div><input type="submit" class="button" value="ログイン" /></div>
+	</form>
+</body>
+
+</html>

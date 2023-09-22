@@ -1,0 +1,179 @@
+* {
+	color: darkslategray;
+}
+
+body {
+	margin-right: 0;
+	background-image: url("https://3.bp.blogspot.com/-3rAW8b7zc4Q/VpufuHV-gTI/AAAAAAAA3J0/NcL-GXgj1_w/s1600/bg_kawara.jpg");
+	background-color:rgba(255,255,255,0.85);
+	background-blend-mode:lighten;
+	background-attachment: fixed;
+}
+
+h1 {
+	color: whitesmoke;
+	padding: 0.5em 0 0.5em 0;
+	display: inline-block;
+	line-height: 1.3;
+	background: darkcyan;
+	vertical-align: middle;
+	border-radius: 25px 0px 0px 25px;
+	width: 100%;
+	margin-block-start: 0.1em;
+}
+
+h1:before {
+	content: '●';
+	color: whitesmoke;
+	margin-right: 8px;
+}
+
+h2 {
+	position: relative;
+}
+
+h2:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 7px;
+	background: -webkit-repeating-linear-gradient(-45deg, mediumturquoise, mediumturquoise 2px, white 2px, white 4px);
+	background: repeating-linear-gradient(-45deg, mediumturquoise, mediumturquoise 2px, white 2px, white 4px);
+}
+
+h3 {
+	/*線の種類（実線） 太さ 色*/
+	border-bottom: solid 1px mediumturquoise;
+}
+
+ul {
+	padding-left: 0;
+}
+
+li {
+	list-style:none;
+}
+
+.osare-table {
+	width: 100%;
+	border-collapse: separate;
+	border: none;
+	border-spacing: 0px 0px;
+	box-shadow: 0 5px 5px 0 grey;
+
+}
+
+.osare-table thead th {
+	color: whitesmoke;
+	font-weight: bold;
+	background: mediumturquoise;
+}
+
+.osare-table thead th:first-child {
+	border-radius: 10px 0 0 0;
+}
+
+.osare-table tbody tr:hover td {
+	background-color: khaki;
+}
+
+.osare-table th,
+.osare-table td {
+	border: 0 none !important;
+	padding: 10px;
+}
+
+/* １行ずつ色変更　不要なら削除 even:奇数行　odd:偶数行 */
+.osare-table tr:nth-child(even) td {
+	background: honeydew;
+}
+
+.osare-table tr:nth-child(odd) td {
+	background: whitesmoke;
+}
+
+a:link {
+	color: cornflowerblue;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:visited {
+	color: cornflowerblue;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline solid gold;
+}
+
+a:active {
+	color: #FF0000;
+	text-decoration: underline;
+}
+
+
+a.button {
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+	padding: 1rem 1rem;
+	font-weight: bold;
+	border: 2px solid darkcyan;
+	color: whitesmoke;
+	border-radius: 2vh;
+	transition: 0.5s;
+}
+
+a.button:hover {
+	color: #fff;
+	background: darkcyan;
+}
+
+
+label {
+	font-size: 0.75em;
+	font-weight: bold;
+}
+
+.cp_iptxt input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: calc(100% - 130px);
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: darkslategray;
+	border: 1px solid cadetblue;
+	border-radius: 4px;
+}
+
+.button {
+	width:120px;
+	display: inline-block;
+	border-radius: 5%;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	background: lightseagreen;
+	color: whitesmoke;
+	line-height: 1em;
+	transition: .3s;
+	border: 2px solid darkcyan;
+}
+
+.align_r {
+	text-align: right;
+}
+
+.error {
+	color:mediumvioletred;
+	font-size: 0.8em;
+}
+
+.icon {
+	width: 100px;
+}
